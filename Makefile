@@ -8,7 +8,7 @@ check:
 	([ -f main.gp ] && ${MAKE} check-gp) || ([ -f main.c ] && ${MAKE} check-c)
 
 main.gp.out: main.gp
-	gp -fq < $< > $@
+	gp -fq -s "400M" < $< > $@
 
 main.c.out: main.c
 	gcc -o main $<
